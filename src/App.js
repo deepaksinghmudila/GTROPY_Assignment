@@ -1,12 +1,12 @@
 import React from "react";
 import './App.css';
-import { Cards } from "./components";  
+import { Cards,Chart,Table } from "./components";  
 import { fetchData } from "./api";  
 
  class App extends React.Component {
    state = {
      data: [],
-     state: "",
+     states: "",
    };
 
    async componentDidMount() {
@@ -20,14 +20,15 @@ import { fetchData } from "./api";
    }   
 
    render() {
-     const { data,state } = this.state;      
+     const { data,states } = this.state;      
      //for (let i = 0; i < data.length;  i+= 1)
        //console.log(data[i].ative);
 
      return (               
-       <div className="container">
-         this is app div
-          <Cards data={data}/> 
+       <div className="container">          
+         <Cards data={data} />          
+         <Chart data={data} />
+         <Table data={data} /> 
        </div>
      );
    }
