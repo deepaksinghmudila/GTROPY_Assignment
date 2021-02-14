@@ -8,9 +8,9 @@ export const fetchData = async () => {
   let changeableUrl = url1;
    
   try {
-      const data = await axios.get(changeableUrl);             
-      //console.log(typeof(data.data.statewise));
-      return data.data.statewise;
+    const { data } = await  axios.get(changeableUrl);             
+      //console.log(typeof data.statewise[0].active);
+      return data.statewise;
       
   } catch (error) {
     console.log(error);
